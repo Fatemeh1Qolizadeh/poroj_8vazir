@@ -9,3 +9,7 @@ def fitness(chromosome):
             if chromosome[i] == chromosome[j] or abs(chromosome[i] - chromosome[j]) == abs(i - j):
                 clashes += 1
     return clashes
+
+# تولید کروموزوم اولیه به صورت تصادفی
+def create_chromosome(n):
+    return [random.randint(0, n - 1) for _ in range(n)]

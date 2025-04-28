@@ -13,3 +13,6 @@ def fitness(chromosome):
 # تولید کروموزوم اولیه به صورت تصادفی
 def create_chromosome(n):
     return [random.randint(0, n - 1) for _ in range(n)]
+# انتخاب والدین بر اساس امتیاز تناسب
+def select_parents(population):
+    return sorted(population, key=lambda x: fitness(x))[:2]

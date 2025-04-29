@@ -16,3 +16,10 @@ def create_chromosome(n):
 # انتخاب والدین بر اساس امتیاز تناسب
 def select_parents(population):
     return sorted(population, key=lambda x: fitness(x))[:2]
+
+# عملگر ترکیب (Crossover)
+def crossover(parent1, parent2):
+    n = len(parent1)
+    crossover_point = random.randint(0, n - 1)
+    return parent1[:crossover_point] + parent2[crossover_point:]
+
